@@ -1,3 +1,7 @@
+html, body {
+  background: #222222;
+}
+
 .app {
   width: 100%;
   height: 100%;

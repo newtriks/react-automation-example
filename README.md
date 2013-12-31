@@ -15,3 +15,9 @@ A JavaScript task runner: [Grunt](http://gruntjs.com/).
 1. `git clone https://github.com/newtriks/react-automation-example.git`
 2. `npm install`
 3. `grunt server`
+
+## TODO
+
+1. Add tests - jasmine/karma
+2. Add jshint
+2. Add stylus?

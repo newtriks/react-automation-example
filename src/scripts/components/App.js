@@ -6,8 +6,11 @@ var React = require('react');
 
 var ImageBox = require('./ImageBox');
 
+// CSS
 require('../../styles/reset.css');
 require('../../styles/app.css');
+
+var imageURL = 'https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-prn1/1010076_477783955633350_1900224762_n.png';
 
 var App = React.createClass({
   getInitialState: function() {
@@ -29,7 +32,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="app">
-        <ImageBox appWidth={this.state.windowWidth}/>
+        <ImageBox appWidth={this.state.windowWidth} imageURL={imageURL}/>
         <p>Current window width: {this.state.windowWidth}</p>
       </div>
     );
