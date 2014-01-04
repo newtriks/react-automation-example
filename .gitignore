@@ -29,3 +29,4 @@ $RECYCLE.BIN/
 
 node_modules/
 .tmp
+/src/scripts/main.js
