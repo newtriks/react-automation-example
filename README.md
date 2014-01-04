@@ -18,6 +18,6 @@ A JavaScript task runner: [Grunt](http://gruntjs.com/).
 
 ## TODO
 
-1. Add tests - jasmine/karma
+1. ~~Add tests - jasmine/karma~~ > see [testing-setup branch](https://github.com/newtriks/react-automation-example/tree/testing-setup)
 2. Add jshint
 2. Add stylus?
