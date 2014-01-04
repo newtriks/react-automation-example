@@ -32,6 +32,6 @@ The [karma-webpack](https://github.com/newtriks/karma-webpack) plugin is used to
 
 ## TODO
 
-1. ~~Add tests - jasmine/karma~~ >Working on better approaches e.g. replace karma with [webpack-dev-server](https://github.com/webpack/webpack-dev-server) or replace webpack with [browserify](http://browserify.org/).
+1. ~~Add tests - jasmine/karma~~ > Working on better approaches e.g. replace karma with [webpack-dev-server](https://github.com/webpack/webpack-dev-server) or replace webpack with [browserify](http://browserify.org/).
 2. Add jshint
 2. Add stylus?
