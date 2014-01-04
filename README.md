@@ -13,8 +13,9 @@ A JavaScript task runner: [Grunt](http://gruntjs.com/).
 ### How to setup the project
 
 1. `git clone https://github.com/newtriks/react-automation-example.git`
-2. `npm install`
-3. `grunt server`
+2. `cd react-automation-example`
+3. `npm install`
+4. `grunt server`
 
 ## TODO
 
