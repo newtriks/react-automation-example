@@ -82,15 +82,6 @@ module.exports = function (grunt) {
           }
         }
       },
-      test: {
-        options: {
-          middleware: function (connect) {
-            return [
-              mountFolder(connect, 'test')
-            ];
-          }
-        }
-      },
       dist: {
         options: {
           middleware: function (connect) {
@@ -104,6 +95,11 @@ module.exports = function (grunt) {
     open: {
       server: {
         url: 'http://localhost:<%= connect.options.port %>'
+      }
+    },
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
       }
     }
   });
@@ -120,6 +116,8 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
+
+  grunt.registerTask('test', ['karma']);
 
   grunt.registerTask('build', []);
 

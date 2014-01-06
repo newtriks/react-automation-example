@@ -2,8 +2,8 @@
  * @jsx React.DOM
  */
 
-var React = require('react');
-var ReactTransitionGroup = require('react/lib/ReactTransitionGroup');
+var React = require('react/addons');
+var ReactTransitionGroup = React.addons.TransitionGroup;
 
 require('../../styles/image-box.css');
 
