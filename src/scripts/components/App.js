@@ -2,6 +2,8 @@
  * @jsx React.DOM
  */
 
+'use strict';
+
 var React = require('react/addons');
 
 var ImageBox = require('./ImageBox');
@@ -28,7 +30,7 @@ var App = React.createClass({
   componentWillUnmount: function() {
     window.removeEventListener('resize', this.handleResize);
   },
-
+  /*jshint ignore:start */
   render: function() {
     return (
       <div className="app">
@@ -37,8 +39,9 @@ var App = React.createClass({
       </div>
     );
   }
+  /*jshint ignore:end */
 });
 
-React.renderComponent(<App />, document.getElementById('content'));
+React.renderComponent(<App />, document.getElementById('content')); // jshint ignore:line
 
 module.exports = App;

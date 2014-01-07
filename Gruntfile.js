@@ -12,11 +12,28 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
   // Read configuration from package.json
   var pkgConfig = grunt.file.readJSON('package.json');
+  var jshintConfig = grunt.file.readJSON('.jshintrc');
+  var loaders = [{
+    test: /\.css$/,
+    loader: 'style!css'
+  }, {
+    test: /\.gif/,
+    loader: 'url-loader?limit=10000&minetype=image/gif'
+  }, {
+    test: /\.jpg/,
+    loader: 'url-loader?limit=10000&minetype=image/jpg'
+  }, {
+    test: /\.png/,
+    loader: 'url-loader?limit=10000&minetype=image/png'
+  }, {
+    test: /\.js$/,
+    loader: 'jsx-loader'
+  }];
 
   grunt.initConfig({
     pkg: pkgConfig,
     webpack: {
-      build: {
+      development: {
         entry: './<%= pkg.src %>/scripts/components/<%= pkg.mainInput %>.js',
         output: {
           path: '<%= pkg.src %>/scripts/',
@@ -28,23 +45,17 @@ module.exports = function (grunt) {
           colors: true,
           reasons: true
         },
+        jshint: grunt.util._.merge(jshintConfig, {
+          emitErrors: false,
+          failOnHint: false
+        }),
         module: {
-          loaders: [{
-            test: /\.css$/,
-            loader: 'style!css'
-          }, {
-            test: /\.gif/,
-            loader: 'url-loader?limit=10000&minetype=image/gif'
-          }, {
-            test: /\.jpg/,
-            loader: 'url-loader?limit=10000&minetype=image/jpg'
-          }, {
-            test: /\.png/,
-            loader: 'url-loader?limit=10000&minetype=image/png'
-          }, {
-            test: /\.js$/,
-            loader: 'jsx-loader'
-          }]
+          preLoaders: [{
+            test: '\\.js$',
+            exclude: 'node_modules',
+            loader: 'jshint'
+          }],
+          loaders: loaders
         }
       }
     },
@@ -54,7 +65,7 @@ module.exports = function (grunt) {
           '<%= pkg.src %>/styles/{,*/}*.css',
           '!<%= pkg.src %>/scripts/<%= pkg.mainOutput %>.js'
         ],
-        tasks: ['webpack']
+        tasks: ['webpack:development']
       },
       livereload: {
         options: {
@@ -111,7 +122,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'connect:livereload',
-      'webpack',
+      'webpack:development',
       'open',
       'watch'
     ]);

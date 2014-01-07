@@ -2,12 +2,15 @@
  * @jsx React.DOM
  */
 
-var React = require('react/addons');
+'use strict';
+
+var React = require('react/addons'); // jshint ignore:line
 var ReactTransitionGroup = React.addons.TransitionGroup;
 
 require('../../styles/image-box.css');
 
 var ImageBox = React.createClass({
+  /*jshint ignore:start */
   render: function () {
     return (
         <div className="imageBox">
@@ -18,6 +21,7 @@ var ImageBox = React.createClass({
         </div>
       )
   }
+  /*jshint ignore:end */
 });
 
 module.exports = ImageBox;

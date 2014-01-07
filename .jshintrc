@@ -19,8 +19,6 @@
   "trailing": true,
   "smarttabs": true,
   "newcap": false,
-  "emitErrors": false,
-  "failOnHint": true,
   "globals": {
     "after": false,
     "afterEach": false,
@@ -32,9 +30,9 @@
     "expect": false,
     "inject": false,
     "it": false,
-    "spyOn": true,
-    "jasmine": true,
-    "spyOnConstructor": true,
+    "spyOn": false,
+    "jasmine": false,
+    "spyOnConstructor": false,
     "React": true
   }
 }
